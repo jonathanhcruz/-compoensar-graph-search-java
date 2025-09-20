@@ -12,7 +12,7 @@ public class DFS {
             return result;
         }
 
-        Stack<Node> stack = new Stack<>(); // pila for DFS last-in-first-out
+        Stack<Node> stack = new Stack<>();
         Set<Node> visited = new HashSet<>();
 
         System.out.println("DFS started from node " + startNode.getValue() + ".");
@@ -31,7 +31,6 @@ public class DFS {
 
             System.out.print("   Adding unvisited neighbors to the stack: ");
             boolean addedNeighbor = false;
-            // Revertir la lista para asegurar un orden de salida consistente
             List<Node> children = new LinkedList<>(currentNode.getChildren());
             Collections.reverse(children);
 
