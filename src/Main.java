@@ -18,6 +18,7 @@ public class Main {
         System.out.println("Recorrido en Profundidad (DFS): " + dfsResult);
 
         // Compare results
+        System.out.println("------------------------------------------");
         System.out.println("Recorrido en Amplitud (BFS): " + bfsResult);
         System.out.println("Recorrido en Profundidad (DFS): " + dfsResult);
 
