@@ -19,7 +19,8 @@ public class Main {
 
         // Compare results
         System.out.println("------------------------------------------");
-        System.out.println("Recorrido en Amplitud (BFS): " + bfsResult);
+        System.out.println("Comparison of results: ");
+        System.out.println("Recorrido en Amplitud (BFS):    " + bfsResult);
         System.out.println("Recorrido en Profundidad (DFS): " + dfsResult);
 
         // Expectative results
