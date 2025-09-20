@@ -11,23 +11,23 @@ public class GraphBuilder {
         Node nodeE = new Node(5);
         Node nodeF = new Node(6);
 
-        nodeA.neighbors.add(nodeB);
-        nodeA.neighbors.add(nodeC);
+        nodeA.addNeighbor(nodeB);
+        nodeA.addNeighbor(nodeC);
 
-        nodeB.neighbors.add(nodeA);
-        nodeB.neighbors.add(nodeD);
-        nodeB.neighbors.add(nodeE);
+        nodeB.addNeighbor(nodeA);
+        nodeB.addNeighbor(nodeD);
+        nodeB.addNeighbor(nodeE);
 
-        nodeC.neighbors.add(nodeA);
-        nodeC.neighbors.add(nodeF);
+        nodeC.addNeighbor(nodeA);
+        nodeC.addNeighbor(nodeF);
 
-        nodeD.neighbors.add(nodeB);
+        nodeD.addNeighbor(nodeB);
 
-        nodeE.neighbors.add(nodeB);
-        nodeE.neighbors.add(nodeF);
+        nodeE.addNeighbor(nodeB);
+        nodeE.addNeighbor(nodeF);
 
-        nodeF.neighbors.add(nodeC);
-        nodeF.neighbors.add(nodeE);
+        nodeF.addNeighbor(nodeC);
+        nodeF.addNeighbor(nodeE);
 
         return nodeA; // root node
     }

@@ -20,7 +20,7 @@ public class DFS {
         }
         visited.add(node);
         result.add(node.getValue());
-        for (Node neighbor : node.neighbors) {
+        for (Node neighbor : node.getNeighbors()) {
             dfsRecursive(neighbor, result, visited);
         }
     }
