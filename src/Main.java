@@ -24,6 +24,5 @@ public class Main {
         // Expectative results
         // BFS expected: [0, 1, 2, 3, 4, 5, 6, 7, 8]
         // DFS expected: [0, 1, 3, 7, 4, 8, 6, 2, 5]
-
     }
 }

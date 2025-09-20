@@ -17,7 +17,7 @@ public class BFS {
             return result;
         }
 
-        Queue<Node> queue = new LinkedList<>(); // cola for BFS first-in-first-out
+        Queue<Node> queue = new LinkedList<>(); 
         Set<Node> visited = new HashSet<>();
 
         System.out.println("BFS started from node " + startNode.getValue() + ".");
