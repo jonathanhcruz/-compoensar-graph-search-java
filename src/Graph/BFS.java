@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.Set;
 import Graph.Node.Node;
 
+import java.util.stream.Collectors;
+
 public class BFS {
     public static List<Integer> traverse(Node startNode) {
         List<Integer> result = new ArrayList<>();
@@ -15,24 +17,41 @@ public class BFS {
             return result;
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>(); // cola for BFS first-in-first-out
         Set<Node> visited = new HashSet<>();
+
+        System.out.println("BFS started from node " + startNode.getValue() + ".");
+        System.out.println("------------------------------------------");
 
         queue.add(startNode);
         visited.add(startNode);
-        result.add(startNode.getValue());
 
         while (!queue.isEmpty()) {
-            Node currentNode = queue.poll();
+            String queueStatus = queue.stream().map(n -> String.valueOf(n.getValue())).collect(Collectors.joining(", "));
+            System.out.println("Queue status: [" + queueStatus + "]");
 
-            for (Node neighbor : currentNode.getNeighbors()) {
+            Node currentNode = queue.poll();
+            System.out.println("-> Visiting the node: " + currentNode.getValue());
+            result.add(currentNode.getValue());
+
+            System.out.print("   Adding unvisited neighbors to the queue: ");
+            boolean addedNeighbor = false;
+            for (Node neighbor : currentNode.getChildren()) {
                 if (!visited.contains(neighbor)) {
                     visited.add(neighbor);
                     queue.add(neighbor);
-                    result.add(neighbor.getValue());
+                    System.out.print(neighbor.getValue() + " ");
+                    addedNeighbor = true;
                 }
             }
+            if (!addedNeighbor) {
+                System.out.print("none.");
+            }
+            System.out.println("\n");
         }
+
+        System.out.println("------------------------------------------");
+        System.out.println("BFS finished.");
         return result;
     }
 }
